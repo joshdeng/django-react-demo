@@ -101,7 +101,7 @@ class Messages extends React.Component<Props, State> {
 					
 					</div>
 					<div style={styles.cardMid} onClick={this.handleToggle.bind(this, index)}>
-						{message.username}说			
+						Said by {message.username}			
 					</div>
 
 					<Comments

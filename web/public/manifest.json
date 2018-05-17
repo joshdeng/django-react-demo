@@ -1,6 +1,6 @@
 {
-  "short_name": "豚豚树洞",
-  "name": "树洞Project",
+  "short_name": "Django-React-Demo",
+  "name": "Django-React-Demo",
   "icons": [
     {
       "src": "favicon.ico",
