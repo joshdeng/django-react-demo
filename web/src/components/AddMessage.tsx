@@ -136,7 +136,7 @@ class AddMessage extends React.Component<Props, State> {
 			messageID: dateID().toString(),
 			username: this.state.username, 
 			content: this.state.content,
-
+			comments: []
 		};
 		// tslint:disable-next-line
 		console.log(message);

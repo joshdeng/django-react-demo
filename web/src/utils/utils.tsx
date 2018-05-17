@@ -88,9 +88,7 @@ export function objToArray(obj: object) {
 	for (var o in obj) {
 		if (obj[o]) {
 			let temp = obj[o];
-			temp.id = o + 1;
-			// tslint:disable-next-line
-			console.log(o)
+			temp.id = parseInt(o, 10) + 1;
 			dataArray.push(temp);
 		}
 	}
