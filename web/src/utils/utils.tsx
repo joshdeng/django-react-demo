@@ -58,9 +58,6 @@ export function updateComments(data: object, table: string, id: number, url?: st
 		}
 	};
 	
-	// tslint:disable-next-line
-	console.log(data)
-	
 	let urlPrifix: string = null;
 	url ? urlPrifix = url : urlPrifix = URL_PREFIX;
 

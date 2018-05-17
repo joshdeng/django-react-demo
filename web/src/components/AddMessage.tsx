@@ -138,8 +138,6 @@ class AddMessage extends React.Component<Props, State> {
 			content: this.state.content,
 			comments: []
 		};
-		// tslint:disable-next-line
-		console.log(message);
 		// validate the text fields
 		if (this.state.content && this.state.username && !(this.state.ContentErrText || this.state.NameErrText)) {
 
@@ -163,7 +161,7 @@ class AddMessage extends React.Component<Props, State> {
 			});
 
 			// refresh
-			// window.location.reload();
+			window.location.reload();
 		}	
 
 	}

@@ -68,8 +68,6 @@ class Comments extends React.Component<Props, State> {
 	}
 
 	updateComment(event: React.FormEvent<HTMLSelectElement>): void {
-		// tslint:disable-next-line
-		console.log(this.props.message)
 
 		// comment validator
 		if (this.state.content.length > 200) {
@@ -110,6 +108,8 @@ class Comments extends React.Component<Props, State> {
 					if (res) {
 						this.props.updatingCommentsSucceed();
 						this.clearComment();
+						// refresh
+						window.location.reload();
 					}
 				},    (error: Error) => {
 					if (this.props.updatingCommentsRejected) {
@@ -132,7 +132,7 @@ class Comments extends React.Component<Props, State> {
 				if (comment) {
 					return (
 						<div key={index} style={styles.commentStyle}>
-							有人说：{comment}
+							Someone Said: {comment}
 						</div>
 					);
 				} else {
@@ -157,7 +157,7 @@ class Comments extends React.Component<Props, State> {
 						style={styles.textFieldStyle}
 						underlineFocusStyle={styles.underlineStyle}
 						floatingLabelStyle={styles.underlineStyle}
-						hintText="说点什么"
+						hintText="Say Something"
 						fullWidth={true}
 						errorText={this.state.errorMsg}
 						multiLine={true}
