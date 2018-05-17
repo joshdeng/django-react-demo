@@ -166,7 +166,7 @@ class Comments extends React.Component<Props, State> {
 					/>
 					<RaisedButton
 						style={styles.submitButtonStyle}
-						label="评论"
+						label="submit"
 						fullWidth={true}
 						onClick={this.handleSubmit}
 					/>
