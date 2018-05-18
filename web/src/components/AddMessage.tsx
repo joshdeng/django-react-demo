@@ -143,7 +143,7 @@ class AddMessage extends React.Component<Props, State> {
 
 			// post data to database
 			postData(message, 'messages').then((res) => {
-				if (res.name) {
+				if (res) {
 					this.props.addMessage(message);
 					this.getMessages();
 				}
@@ -158,10 +158,7 @@ class AddMessage extends React.Component<Props, State> {
 			// show pop up bar
 			this.setState({
 				showPop: true,
-			});
-
-			// refresh
-			window.location.reload();
+			});	
 		}	
 
 	}

@@ -112,6 +112,7 @@ class Messages extends React.Component<Props, State> {
 						updatingCommentsSucceed={this.props.updatingCommentsSucceed}
 						updatingCommentsRejected={this.props.updatingCommentsRejected}
 						isFetching={this.props.isFetching}
+						getMessages={this.props.getMessages}
 
 					/>
 					<div onClick={this.handleToggle.bind(this, index)}>

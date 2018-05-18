@@ -3,7 +3,7 @@ import { CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Message, Comment } from '../types/index';
-import { updateComments, dateID } from '../utils/utils';
+import { updateComments, dateID, fetchData } from '../utils/utils';
 
 // define component styles
 const styles = {
@@ -45,6 +45,7 @@ export interface Props {
 	updatingComments?: () => void;
 	updatingCommentsSucceed?: () => void;
 	updatingCommentsRejected?: () => void;
+	getMessages: (message: Message[]) => void;
 	isFetching: boolean;
 
 }
@@ -65,6 +66,14 @@ class Comments extends React.Component<Props, State> {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.updateComment = this.updateComment.bind(this);
+		this.getMessages = this.getMessages.bind(this);
+	}
+
+	// fetch messages
+	getMessages() {
+		fetchData('messages').then((res) => {
+			this.props.getMessages(res);
+		});
 	}
 
 	updateComment(event: React.FormEvent<HTMLSelectElement>): void {
@@ -108,8 +117,7 @@ class Comments extends React.Component<Props, State> {
 					if (res) {
 						this.props.updatingCommentsSucceed();
 						this.clearComment();
-						// refresh
-						window.location.reload();
+						this.getMessages();
 					}
 				},    (error: Error) => {
 					if (this.props.updatingCommentsRejected) {

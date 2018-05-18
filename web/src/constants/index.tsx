@@ -24,5 +24,5 @@ export type HIDE_ADD_MESSAGE_MODAL = typeof HIDE_ADD_MESSAGE_MODAL;
 
 // url prifix for rest api
 // export const URL_PREFIX = 'https://tuntunshudong.firebaseio.com/';
-export const URL_PREFIX = 'http://127.0.0.1:8000/api/';
+export const URL_PREFIX = 'http://47.254.31.76:8000/api/';
 export type URL_PREFIX = typeof URL_PREFIX;
